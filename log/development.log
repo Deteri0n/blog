@@ -1518,3 +1518,75 @@ Processing by ArticlesController#show as HTML
   [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 7]]
   Rendered articles/show.html.erb within layouts/application (28.9ms)
 Completed 200 OK in 60ms (Views: 58.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/articles/7" for 10.0.2.2 at 2020-11-10 18:28:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 7]]
+  Rendered articles/show.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 68ms (Views: 58.3ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/articles/7/comments" for 10.0.2.2 at 2020-11-10 18:28:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vQZUNM7RrAleOUiXC0Lu89wRnneCSVi7MM73Nkw5xy+CYNblEsWFf5Yikxw/xQlmzMfrcgg3Z+ZMQpXlNF/16w==", "comment"=>{"commenter"=>"fsefsfesf", "body"=>"sssssssssssss"}, "commit"=>"Create Comment", "article_id"=>"7"}
+  [1m[35mArticle Load (0.4ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["commenter", "fsefsfesf"], ["body", "sssssssssssss"], ["article_id", 7], ["created_at", "2020-11-10 18:28:29.676820"], ["updated_at", "2020-11-10 18:28:29.676820"]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/7
+Completed 302 Found in 5ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/articles/7" for 10.0.2.2 at 2020-11-10 18:28:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 7]]
+  Rendered articles/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/articles/7/comments" for 10.0.2.2 at 2020-11-10 18:28:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i60/LyXWU0oPZ6wlkZqCUCsHO6zOpAlMG+7ySLdUj9a0y73++cJ6PMd8d66lHWXFO9FOqUTaNhFnYpCbzzK9Eg==", "comment"=>{"commenter"=>"fsefeeeeeeeeeeeeeeee", "body"=>"eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"}, "commit"=>"Create Comment", "article_id"=>"7"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "comments" ("commenter", "body", "article_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["commenter", "fsefeeeeeeeeeeeeeeee"], ["body", "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"], ["article_id", 7], ["created_at", "2020-11-10 18:28:36.971716"], ["updated_at", "2020-11-10 18:28:36.971716"]]
+  [1m[36m (0.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/articles/7
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/articles/7" for 10.0.2.2 at 2020-11-10 18:28:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mArticle Load (0.3ms)[0m  SELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mComment Load (0.2ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?[0m  [["article_id", 7]]
+  Rendered articles/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 34ms (Views: 33.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/articles" for 10.0.2.2 at 2020-11-10 18:28:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#index as HTML
+  [1m[35mArticle Load (0.3ms)[0m  SELECT "articles".* FROM "articles"
+  Rendered articles/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/articles/7" for 10.0.2.2 at 2020-11-10 18:28:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mArticle Load (0.3ms)[0m  [1mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT 1[0m  [["id", 7]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."article_id" = ?  [["article_id", 7]]
+  Rendered articles/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 38ms (Views: 36.9ms | ActiveRecord: 0.6ms)
